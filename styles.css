@@ -1,27 +1,7 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-/* The Jersey 10 and 25 fonts are available on google fonts, but have severe display issues when rasterized, so alternative pixel-inspired fonts have been used */
-.press-start-2p-regular {
-    font-family: "Press Start 2P", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.vt323-regular {
-    font-family: "VT323", monospace;
-    font-weight: 400;
-    font-style: normal;
-}
-
 html {
     font-size: 62.5%;
     color: #000000;
-    background-color: #ff00c8; /* Similar idea as 'missing texture' placeholder in game dev, bright mismatching colour to highlight unintended missing visuals. Should be changed for an actual release because slow loading can flash it and eye fuck the user */
+    background-color: #FFF5D1; /* Similar idea as 'missing texture' placeholder in game dev, bright mismatching colour to highlight unintended missing visuals. Should be changed for an actual release because slow loading can flash it and eye fuck the user */
     height: 100%;
 
     min-width: 550px; /* Because background is tied to main content, extremely narrow screens broke it, and this was my best idea for a fix */
@@ -63,4 +43,73 @@ h1 {
     font-weight: 400;
 
     color: #000000;
+}
+
+
+/* ######################################## */
+/* ##### HEADER ############################################################################################################################################################################################################## */
+/* ######################################## */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+
+    outline: 2px dashed #ff00c8;
+    background-color: rgb(112, 16, 91);
+}
+
+.header .left-section img {
+    height: 50px;
+    width: auto;
+}
+
+.header .right-section {
+    display: flex; /* Aligns children horizontally */
+    align-items: center; /* Vertically centers children */
+    gap: 20px; /* Adds spacing between text-buttons and image-buttons */
+}
+
+.header .right-section .text-buttons {
+    display: flex; /* Aligns buttons horizontally */
+    gap: 10px; /* Adds spacing between buttons */
+}
+
+.header .right-section .image-buttons {
+    display: flex; /* Aligns image buttons horizontally */
+    gap: 10px; /* Adds spacing between image buttons */
+}
+
+.header .right-section button {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header .right-section button:hover {
+    background-color: #0056b3;
+}
+
+.header .right-section .image-buttons .btn1,
+.header .right-section .image-buttons .btn2 {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+
+.header .right-section .image-buttons .btn1 {
+    background-image: url('image1.jpg');
+}
+
+.header .right-section .image-buttons .btn2 {
+    background-image: url('image2.jpg');
 }
