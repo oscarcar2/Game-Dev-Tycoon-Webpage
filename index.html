@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Game Dev Tycoon</title>
@@ -14,22 +12,40 @@
     <body>
         <!-- Tools like ChatGPT and general boilerplate resources extensively used for base layouts.
         ChatGPT prompt example: "html boilerplate for header with name text left and four buttons right." -->
-        <header>
-            <div class="left-section">
-                <img src="steam-logo.png" alt="Steam Logo">
-            </div>
-            <div class="right-section">
-                <div class="text-buttons">
-                    <button>Game Dev Tycoon</button>
-                    <button>Tavern Keeper</button>
-                    <button>GHG Club</button>
-                    <button>Blog</button>
-                    <button>About</button>
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="https://oscardoesdev.com/">
+                        <img src="images/ghg_logo_2019_240x60.png" alt="Logo" >
+                    </a>
                 </div>
-                <div class="image-buttons">
-                    <button class="btn1"></button>
-                    <button class="btn2"></button>
-                </div>
+                <nav class="navigation">
+                    <div class="text-buttons">
+                        <a href="https://oscardoesdev.com/">
+                            <button>Game Dev Tycoon</button>
+                        </a>
+                        <a href="https://tavernkeeper.com/">
+                            <button>Tavern Keeper</button>
+                        </a>
+                        <a href="https://www.patreon.com/greenheartgames">
+                            <button>GHG Club</button>
+                        </a>
+                        <a href="https://www.greenheartgames.com/blog/">
+                            <button>Blog</button>
+                        </a>
+                        <a href="https://www.greenheartgames.com/about/">
+                            <button>About</button>
+                        </a>
+                    </div>
+                    <div class="image-buttons">
+                        <a href="https://www.facebook.com/GreenheartGames">
+                            <button><img src="images/facebook-circle.svg" alt="Icon 1"></button>
+                        </a>
+                        <a href="https://x.com/GreenheartGames">
+                            <button><img src="images/twitter-circle.svg" alt="Icon 2"></button>
+                        </a>
+                    </div>
+                </nav>
             </div>
         </header>
         
