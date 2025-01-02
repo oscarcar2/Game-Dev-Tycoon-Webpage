@@ -1,10 +1,18 @@
+    /* 
+    These are my debugging highlights. 
+    I apply them to currently worked on elements to make sure i have a correct mental model of 
+    how given elements are dimensioned.
+    Mainly useful when invisible elements accidentally have unintuitive size relations or an errant
+    gap or similar is causing stuff to get pushed around unintentionally.
+
+    outline: 2px dashed #FF00C8;
+    background-color: rgb(112, 16, 91); 
+    */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    /* outline: 2px dashed #FF00C8;
-    background-color: rgb(112, 16, 91); */
 }
 
 body {
@@ -26,38 +34,77 @@ body {
 
     margin-top: 20px; /* The gap before the whole container element, to the header. */
     margin-bottom: 20px; /* The gap after the whole container element, to the footer. */
-    gap: 20px; /* The gap between contained elements, the main body elements. */
+    gap: 40px; /* The gap between contained elements, the main body elements. */
 
-    outline: 2px dashed #FF00C8;
+    /* outline: 2px dashed #FF00C8; */
+}
+
+.divider-line {
+    height: 3px; /* Thickness of the line */
+    width: 80%; /* How wide the line is */
+    background-color: #8C523080; /* Line color with 80% opacity */
+    margin: 7px; /* Spacing around the line */
 }
 
 
 
 /* ################# */
-/* ##### VIDEO ##### */
+/* ##### MEDIA ##### */
 /* ################# */
 
-.video-container { /* Video Container */
-    width: 90%;
-    max-width: 800px;
-    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
-    
+.media-container {
     background-color: #FFE9D1;
     border: 3px solid #000000;
     border-radius: 10px;
     box-shadow: 2px 2px 0 0 #000000;
 
-    overflow: hidden;
+    gap: 0px; /* Extra spacing between displayed element and element selection below. Unused atm. */
+    
+    overflow: visible;
     display: flex;
+    flex-direction: column; /* Makes sure the container called lower is actually fucking below. */
     justify-content: center;
     align-items: center;
 }
 
-.video-container iframe { /* Video Frame */
+.media-container iframe { /* Video Frame */
+    margin: 10px;
+    
     width: 90%;
-    height: 90%;
-    border: none; /* Remove iframe borders */
+    aspect-ratio: 16/9;
+    height: auto;
 }
+
+.media-lower-container {
+    display: flex; /* Makes elements shown as a line */
+
+    margin: 10px;
+}
+
+.preview-container {
+    display: flex;
+
+    gap: 10px; /* Spacing between images */
+}
+
+.preview-container img, .media-lower-container img { /* Shared general styling because they're meant to appear similar */
+    border-radius: 3px; /* Rounded corners, feels like an os window more */
+}
+
+.media-lower-container img { /* MISSING NARROW VERSION */
+    height: 80px; /* Manually set height, because this element is locked as the widest possible. */
+    width: auto; /* Match width */
+}
+
+.preview-container img { 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+
+    height: 80px; /* Match width */
+    width: auto;
+
+    margin-top: 50px;
+}
+
 
 
 /* ################## */
