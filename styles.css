@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 
-    /* outline: 2px dashed #ff00c8;
+    /* outline: 2px dashed #FF00C8;
     background-color: rgb(112, 16, 91); */
 }
 
@@ -12,6 +12,52 @@ body {
     background-color: #FFF5D1;
 }
 
+.main-content { /* centers main content */
+    display: flex;
+    justify-content: center;
+}
+
+.container { /* constrains main content to a max width */
+    display: flex;
+    flex-direction: column; /* make each element follow the next vertically */
+    align-items: center; /* Center contained divs horizontally (BECAUSE IT IS FLEX COLUMN I FUCKING SWEAR TO GOD THIS LANGUAGE). */
+    max-width: 1050px; /* Maximum width for the layout */
+    width: 100%; /* Makes the container flexible within the max-width */
+
+    margin-top: 20px; /* The gap before the whole container element, to the header. */
+    margin-bottom: 20px; /* The gap after the whole container element, to the footer. */
+    gap: 20px; /* The gap between contained elements, the main body elements. */
+
+    outline: 2px dashed #FF00C8;
+}
+
+
+
+/* ################# */
+/* ##### VIDEO ##### */
+/* ################# */
+
+.video-container { /* Video Container */
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+    
+    background-color: #FFE9D1;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 0 #000000;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container iframe { /* Video Frame */
+    width: 90%;
+    height: 90%;
+    border: none; /* Remove iframe borders */
+}
 
 
 /* ################## */
@@ -27,15 +73,12 @@ body {
     border-bottom: 1px solid #D98D62;
 }
 
-.container {
+.header-container {
     display: flex;
     justify-content: space-between;
     max-width: 1050px; /* Maximum width for the layout */
     width: 100%; /* Makes the container flexible within the max-width */
     margin: 0 auto; /* Centers the container horizontally */
-
-    /* outline: 2px dashed #ff00c8;
-    background-color: rgb(112, 16, 91); */
 }
 
 .logo img {
