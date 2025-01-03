@@ -35,15 +35,54 @@ body {
     margin-top: 20px; /* The gap before the whole container element, to the header. */
     margin-bottom: 20px; /* The gap after the whole container element, to the footer. */
     gap: 40px; /* The gap between contained elements, the main body elements. */
-
-    /* outline: 2px dashed #FF00C8; */
 }
 
 .divider-line {
+    border-radius: 5px; /* Rounds off the ends. */
     height: 3px; /* Thickness of the line */
     width: 80%; /* How wide the line is */
     background-color: #8C523080; /* Line color with 80% opacity */
     margin: 7px; /* Spacing around the line */
+}
+
+.decoration-wrapper { /* The general point of this is a repeatable visual element that doesn't impact layout. */
+    /* Empty for now. */
+}
+
+.fake-buttons {
+    display: flex;
+
+    width: 150px;
+    height: 0; /* Ensures the decoration adds no height to the element. */
+    margin-left: auto; /* Push container to the right */
+
+    gap: 10px;
+}
+
+.fake-left-red, .fake-middle-green, .fake-right-blue {
+    position: relative;
+    z-index: -1; /* Lower z-index, appears behind main element */
+    overflow: visible; /* The whole point is overflow, this ensures it is visible. */
+
+    transform: translateY(-7px); /* Very critical, otherwise the flat element above just displays down behind parent. */
+
+    width: 40px;
+    height: 30px;
+    
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+.fake-left-red {
+    background-color: #FF6666;
+}
+
+.fake-middle-green {
+    background-color: #66FF66;
+}
+
+.fake-right-blue {
+    background-color: #6666FF;
 }
 
 
@@ -73,6 +112,9 @@ body {
     width: 90%;
     aspect-ratio: 16/9;
     height: auto; /* For some fucking reason this is absolutelty needed despite ostencibly being the implicity default fuck my life */
+
+    border-radius: 6px;
+    border: 3px solid #F2BA52;
 }
 
 .media-lower-container {
