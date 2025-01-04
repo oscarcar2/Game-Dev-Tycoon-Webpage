@@ -1,13 +1,13 @@
-    /* 
-    These are my debugging highlights. 
-    I apply them to currently worked on elements to make sure i have a correct mental model of 
-    how given elements are dimensioned.
-    Mainly useful when invisible elements accidentally have unintuitive size relations or an errant
-    gap or similar is causing stuff to get pushed around unintentionally.
+/* 
+These are my debugging highlights. 
+I apply them to currently worked on elements to make sure i have a correct mental model of 
+how given elements are dimensioned.
+Mainly useful when invisible elements accidentally have unintuitive size relations or an errant
+gap or similar is causing stuff to get pushed around unintentionally.
 
-    outline: 2px dashed #FF00C8;
-    background-color: rgb(112, 16, 91); 
-    */
+outline: 2px dashed #FF00C8;
+background-color: rgb(112, 16, 91); 
+*/
 
 * {
     margin: 0;
@@ -31,11 +31,25 @@ body {
     align-items: center; /* Center contained divs horizontally (BECAUSE IT IS FLEX COLUMN I FUCKING SWEAR TO GOD THIS LANGUAGE). */
     max-width: 1050px; /* Maximum width for the layout */
     width: 100%; /* Makes the container flexible within the max-width */
-
+    
     margin-top: 20px; /* The gap before the whole container element, to the header. */
     margin-bottom: 20px; /* The gap after the whole container element, to the footer. */
     gap: 40px; /* The gap between contained elements, the main body elements. */
+    
+    /* outline: 2px dashed #FF00C8; */
 }
+
+
+h2 {
+    text-align: center;
+    font-style: italic;
+
+    margin: 50px 0;
+    
+    color: #555555;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+    
 
 .divider-line {
     border-radius: 5px; /* Rounds off the ends. */
@@ -45,8 +59,9 @@ body {
     margin: 7px; /* Spacing around the line */
 }
 
+
 .decoration-wrapper { /* The general point of this is a repeatable visual element that doesn't impact layout. */
-    /* Empty for now. */
+    max-width: 90%; /* I don't understand why, but this locks sub element width in general, so i need this max width or all sub elements become unresponsive to view port tightening. Fuck. */
 }
 
 .fake-buttons {
@@ -128,7 +143,20 @@ body {
     -webkit-mask-image: none;
 }
 
+/* ##### RESPONSIVE TITLE ##### */
+/* Mobile layout changes. */
 
+@media (max-width: 740px) { /* Mobile layout changes. Some mobile responsiveness is built manually due to layout constraints already being tight so changes are simple. */
+    
+    .banner-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Locks layout to a 2x2 grid. */
+    }
+    
+    /* .header-container {
+        outline: 2px dashed #FF00C8;
+    } */
+}
 
 
 
@@ -144,7 +172,6 @@ body {
 
     gap: 0px; /* Extra spacing between displayed element and element selection below. Unused atm. */
     
-    overflow: visible;
     display: flex;
     flex-direction: column; /* Makes sure the container called lower is actually fucking below. */
     justify-content: center;
@@ -162,34 +189,50 @@ body {
     border: 3px solid #F2BA52;
 }
 
+/* ##### LOWER MEDIA ##### */
 .media-lower-container {
     display: flex; /* Makes elements shown as a line */
 
     margin: 10px;
+
+    width: 95%;
+    
+    /* outline: 2px dashed #FF00C8; */
 }
 
-.preview-container {
+.media-lower-left-container-folder-img {
+    display: flex; /* Force horizontal alignment. */
+    justify-content: space-between; /* Fills the space between the images. */
+    align-items: flex-start;
+    
+    width: 30%; /* Forces the folder graphics to only take 30% of available parent div. */
+    
+    /* background-color: #f0f0f0; */
+    /* outline: 2px dashed #FF00C8; */
+}
+
+.media-lower-left-container-folder-img img {
+    max-width: 50%;            /* Images can take up to a third of the width */
+}
+
+.media-lower-right-container-thumbnails {
+    width: 70%; /* Manually set, must add up to 100% */
+
     display: flex;
+    justify-content: space-between;
 
-    gap: 10px; /* Spacing between images */
+    /* outline: 2px dashed #FF00C8; */
 }
 
-.preview-container img, .media-lower-container img { /* Shared general styling because they're meant to appear similar */
+.media-lower-right-container-thumbnails img { 
+    margin-top: 10%; /* Push this element down so it appears to be a sub-element of the folder img. */
+
     border-radius: 3px; /* Rounded corners, feels like an os window more */
-}
-
-.media-lower-container img { /* MISSING NARROW VERSION */
-    height: 80px; /* Manually set height, because this element is locked as the widest possible. */
-    width: auto; /* Match width */
-}
-
-.preview-container img { 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
 
-    height: 80px; /* Match width */
-    width: auto;
+    max-width: 23%; /* Images may take up this much space. Theoretically 25% each, but a few given up for spacing. */
 
-    margin-top: 50px;
+    /* outline: 2px dashed #FF00C8; */
 }
 
 
@@ -274,4 +317,28 @@ body {
 
 .image-buttons button:hover img {
     opacity: 0.8;
+}
+
+/* ##### RESPONSIVE HEADER ##### */
+/* Mobile layout changes. */
+
+@media (max-width: 800px) { 
+    .text-buttons {
+        display: flex; /* Quick way to make button text stack saving space. */
+
+        width: 320px; /* Locks dimension so it doesn't have ugly contraction behaviour. */
+    }
+}
+
+@media (max-width: 640px) { 
+    .text-buttons {
+        flex-direction: column; /* Make it stack the buttons, we have enough width for the full Game Dev Tycoon button text. */
+
+        width: auto; /* Unlock width or it remains fucked and too wide. */
+    }
+
+    /* Left as illustration, this is how i quickly determine if behaviour is activating at the intended width by simply dragging window size. */
+    /* .header-container {
+        outline: 2px dashed #FF00C8;
+    } */
 }
