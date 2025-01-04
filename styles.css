@@ -100,6 +100,15 @@ h2 {
     background-color: #6666FF;
 }
 
+.window-container {
+    background-color: #FFE9D1;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 0 #000000;
+
+    /* outline: 2px dashed #FF00C8; */
+}
+
 
 
 /* ################# */
@@ -164,6 +173,7 @@ h2 {
 /* ##### MEDIA ##### */
 /* ################# */
 
+/* This should be converted to use the new window container class, but for now it's manually implemented here. */
 .media-container {
     background-color: #FFE9D1;
     border: 3px solid #000000;
@@ -233,6 +243,97 @@ h2 {
     max-width: 23%; /* Images may take up this much space. Theoretically 25% each, but a few given up for spacing. */
 
     /* outline: 2px dashed #FF00C8; */
+}
+
+
+
+/* ################### */
+/* ##### REVIEWS ##### */
+/* ################### */
+
+.reviews-container {
+    display: flex; /* Enables the use of gap. */
+    flex-direction: column; /* Default flex direction wrong for this element. */
+
+    align-items: center; /* Centers contents, only actually targeting the divider, but has to hit everything and then force reviews left in their own class. */
+    
+    padding: 10px;
+    gap: 5px;
+
+    /* outline: 2px dashed #FF00C8;  */
+}
+
+.individual-review {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%; /* CRITICAL flex: 1; does nothing if this does not get forced to fill it's available space here. */
+    height: 100%;
+    margin-right: auto; /* Forces the otherwise centered elements to the left. */
+
+    gap: 10px;
+
+    /* outline: 2px dashed #FF00C8; */
+}
+
+.individual-review-left-rating {
+    display: flex;
+
+    /* outline: 2px dashed #FF00C8; */
+}
+
+.individual-review-left-rating img {
+    /* Awful solution to my image being smushed, but it fixes it quickly. Should be removed and image simply swapped for one that's not fucked. */
+    aspect-ratio: 4/1;
+
+    display: flex; /* Default inline element, setting to anything else removes inline behaviour like unwanted extra text spacing below image. */
+
+    height: 60px;
+
+    /* outline: 2px dashed #FF00C8; */
+}
+
+.individual-review-right-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    flex: 1; /* Allow this div to take up the remaining space */
+
+    background-color: #FFEBA5;
+    border-radius: 10px;
+    outline: 2px solid #8C5230;
+
+    padding: 10px;
+
+    /* outline: 2px dashed #FF00C8; */
+}
+
+.individual-review-right-text {
+    display: flex;
+
+    font-size: larger;
+    font-weight: bold;
+
+    /* outline: 2px dashed #FF00C8; */
+}
+
+.individual-review-right-extra-text {
+    display: flex;
+    margin-left: auto;
+    text-align: right;
+    
+    font-size: normal;
+    font-weight: bold;
+    font-style: italic;
+
+    color: #e2e2e2;
+    text-shadow: 
+    1px 1px 0px rgba(0, 0, 0, 0.8),  /* shadow to the bottom right */
+    -1px -1px 0px rgba(0, 0, 0, 0.8), /* shadow to the top left */
+    1px -1px 0px rgba(0, 0, 0, 0.8),  /* shadow to the top right */
+    -1px 1px 0px rgba(0, 0, 0, 0.8);  /* shadow to the bottom left */
 }
 
 
