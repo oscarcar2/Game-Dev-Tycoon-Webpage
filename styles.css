@@ -508,3 +508,27 @@ h3 {
 
     gap: 5px;
 }
+
+
+
+/* ################### */
+/* ##### SOCIALS ##### */
+/* ################### */
+
+/* I AM ONLY REWRITING WHAT I HAVE TO */
+/* MOST OF THIS IS JUST USING THE REVIEWS CLASSES */
+
+.individual-socials-left-button {
+    display: flex;
+
+    /* outline: 2px dashed #FF00C8; */
+}
+
+/* Had to get rid of the awful aspect ratio trick i did for the bad ratings image. */
+.individual-socials-left-button img {
+    display: flex; /* Default inline element, setting to anything else removes inline behaviour like unwanted extra text spacing below image. */
+
+    height: 100px;
+
+    /* outline: 2px dashed #FF00C8; */
+}
