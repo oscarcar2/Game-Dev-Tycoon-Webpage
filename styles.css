@@ -50,6 +50,11 @@ h2 {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
     
+h3 {
+    /* Default spacing was smaller and caused certain letters to touch. */
+    letter-spacing: 0.03em; 
+}
+
 
 .divider-line {
     border-radius: 5px; /* Rounds off the ends. */
@@ -464,4 +469,42 @@ h2 {
 
         outline: 2px dashed #FF00C8;
     }
+}
+
+
+
+/* ####################### */
+/* ##### DESCRIPTION ##### */
+/* ####################### */
+
+.all-descriptions-container {
+    display: flex; /* Enables the use of flexbox features like centering. */
+    flex-direction: column; /* Default flex direction wrong for this element. */
+
+    align-items: center; /* Centers contents, only actually targeting the divider, but has to hit everything and then force reviews left in their own class. */
+
+    width: 95%;
+}
+
+.individual-description-container {
+    display: flex;
+
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    width: 100%;
+}
+
+.individual-description-container img {
+    width: 40%;
+}
+
+.description-text-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
 }
