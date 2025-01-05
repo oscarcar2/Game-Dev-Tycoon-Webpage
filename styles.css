@@ -111,6 +111,114 @@ h2 {
 
 
 
+/* ################## */
+/* ##### HEADER ##### */
+/* ################## */
+
+.header {
+    position: relative; /* Needed to enable z-index manipulation. */
+    z-index: 1; /* Hide the slight overflow behind the header to do a bit of lazy cropping. */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #F2BA52;
+    border-bottom: 1px solid #D98D62;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1050px; /* Maximum width for the layout */
+    width: 100%; /* Makes the container flexible within the max-width */
+    margin: 0 auto; /* Centers the container horizontally */
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.navigation {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+}
+
+.text-buttons a { /* fixes link anchors changing how element is displayed */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make anchor behave like a block */
+}
+
+.text-buttons button,
+.image-buttons button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    padding: 1px 5px;
+    transition: background-color 0.3s;
+}
+
+.text-buttons button:hover {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+.image-buttons {
+    display: flex; /* Align buttons horizontally */
+    align-items: center; /* Vertically align content */
+    gap: 0px; /* Optional: Add spacing between the buttons */
+}
+
+.image-buttons button {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.image-buttons button img {
+    opacity: .5;
+    transition: opacity 0.3s; /* Smooth transition */
+    width: 30px;
+    height: 30px;
+}
+
+.image-buttons button:hover img {
+    opacity: 0.8;
+}
+
+/* ##### RESPONSIVE HEADER ##### */
+/* Mobile layout changes. */
+
+@media (max-width: 800px) { 
+    .text-buttons {
+        display: flex; /* Quick way to make button text stack saving space. */
+
+        width: 320px; /* Locks dimension so it doesn't have ugly contraction behaviour. */
+    }
+}
+
+@media (max-width: 640px) { 
+    .text-buttons {
+        flex-direction: column; /* Make it stack the buttons, we have enough width for the full Game Dev Tycoon button text. */
+
+        width: auto; /* Unlock width or it remains fucked and too wide. */
+    }
+
+    /* Left as illustration, this is how i quickly determine if behaviour is activating at the intended width by simply dragging window size. */
+    /* .header-container {
+        outline: 2px dashed #FF00C8;
+    } */
+}
+
+
+
 /* ################# */
 /* ##### TITLE ##### */
 /* ################# */
@@ -320,6 +428,7 @@ h2 {
     display: flex;
 
     font-size: larger;
+    
     font-weight: bold;
 
     /* outline: 2px dashed #FF00C8; */
@@ -350,112 +459,4 @@ h2 {
 
         outline: 2px dashed #FF00C8;
     }
-}
-
-
-
-/* ################## */
-/* ##### HEADER ##### */
-/* ################## */
-
-.header {
-    position: relative; /* Needed to enable z-index manipulation. */
-    z-index: 1; /* Hide the slight overflow behind the header to do a bit of lazy cropping. */
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #F2BA52;
-    border-bottom: 1px solid #D98D62;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1050px; /* Maximum width for the layout */
-    width: 100%; /* Makes the container flexible within the max-width */
-    margin: 0 auto; /* Centers the container horizontally */
-}
-
-.logo img {
-    height: 50px;
-    width: auto;
-}
-
-.navigation {
-    display: flex;
-    align-items: flex-end;
-    padding: 5px;
-}
-
-.text-buttons a { /* fixes link anchors changing how element is displayed */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Make anchor behave like a block */
-}
-
-.text-buttons button,
-.image-buttons button {
-    background: none;
-    border: none;
-    font-size: 14px;
-    margin: 5px;
-    cursor: pointer;
-    padding: 1px 5px;
-    transition: background-color 0.3s;
-}
-
-.text-buttons button:hover {
-    background-color: #e0e0e0;
-    border-radius: 4px;
-}
-
-.image-buttons {
-    display: flex; /* Align buttons horizontally */
-    align-items: center; /* Vertically align content */
-    gap: 0px; /* Optional: Add spacing between the buttons */
-}
-
-.image-buttons button {
-    margin: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-}
-
-.image-buttons button img {
-    opacity: .5;
-    transition: opacity 0.3s; /* Smooth transition */
-    width: 30px;
-    height: 30px;
-}
-
-.image-buttons button:hover img {
-    opacity: 0.8;
-}
-
-/* ##### RESPONSIVE HEADER ##### */
-/* Mobile layout changes. */
-
-@media (max-width: 800px) { 
-    .text-buttons {
-        display: flex; /* Quick way to make button text stack saving space. */
-
-        width: 320px; /* Locks dimension so it doesn't have ugly contraction behaviour. */
-    }
-}
-
-@media (max-width: 640px) { 
-    .text-buttons {
-        flex-direction: column; /* Make it stack the buttons, we have enough width for the full Game Dev Tycoon button text. */
-
-        width: auto; /* Unlock width or it remains fucked and too wide. */
-    }
-
-    /* Left as illustration, this is how i quickly determine if behaviour is activating at the intended width by simply dragging window size. */
-    /* .header-container {
-        outline: 2px dashed #FF00C8;
-    } */
 }
