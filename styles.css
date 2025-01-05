@@ -246,10 +246,10 @@ h2 {
 }
 
 
-
 .h2-wrapper {
     background: radial-gradient(farthest-side, #ffca67, rgba(255, 255, 255, 0));
 }
+
 
 
 /* ################### */
@@ -305,6 +305,7 @@ h2 {
     align-items: flex-start;
 
     flex: 1; /* Allow this div to take up the remaining space */
+    width: 100%; /* Only relevant for mobile layout, where this box needs to fill out width alone. */
 
     background-color: #FFEBA5;
     border-radius: 10px;
@@ -339,6 +340,21 @@ h2 {
     -1px -1px 0px rgba(0, 0, 0, 0.8), /* shadow to the top left */
     1px -1px 0px rgba(0, 0, 0, 0.8),  /* shadow to the top right */
     -1px 1px 0px rgba(0, 0, 0, 0.8);  /* shadow to the bottom left */
+}
+
+/* ##### RESPONSIVE REVIEWS ##### */
+/* Mobile layout changes. */
+@media (max-width: 800px) { 
+    .individual-review{
+        flex-direction: column;
+
+        outline: 2px dashed #FF00C8;
+    }
+
+    .individual-review-right-container
+    {
+        /* width: 100%; */
+    }
 }
 
 
