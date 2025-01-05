@@ -532,3 +532,32 @@ h3 {
 
     /* outline: 2px dashed #FF00C8; */
 }
+
+.socials-bottom-others-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers text 'Follow us!'. Preceding needed for align-items: */
+}
+
+.socials-bottom-others-container-images {
+    display: flex;
+    justify-content: center;
+
+    /* General logo alignment and breathing room. */
+    gap: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.socials-bottom-others-container-images img {
+    height: 100px; /* Locking size is OK here, even min width still works. */
+
+    background-color: white;
+    box-shadow: 0 0 0 10px white; /* I AM A GOLDEN GOD Shadow fills in the missing background from the offset outline. */
+    /* It's actually incredibly stupid and bad but it's quicker and easier than adding a while extra div. */
+    /* I decided agianst the outline so now these comments look stupid, but hey it still adds some visual breathing room. */
+    
+    border-radius: 10px; 
+
+    /* outline: 2px dashed #FF00C8; */
+}
