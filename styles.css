@@ -467,7 +467,7 @@ h3 {
     .individual-review{
         flex-direction: column;
 
-        outline: 2px dashed #FF00C8;
+        /* outline: 2px dashed #FF00C8; */
     }
 }
 
