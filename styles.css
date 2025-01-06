@@ -765,102 +765,84 @@ because it is purely illustrative and therefor temporary anyway. */
 /* ################## */
 
 footer {
-    position: relative; /* Needed to enable z-index manipulation. */
-    z-index: 1; /* Hide the slight overflow behind the footer to do a bit of lazy cropping. */
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 10px 20px;
-    background-color: #F2BA52;
-    border-top: 1px solid #D98D62;
+    background-color: #333;
+    border-top: 1px solid #888;
 }
 
 .footer-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+
     max-width: 1050px; /* Maximum width for the layout */
     width: 100%; /* Makes the container flexible within the max-width */
     margin: 0 auto; /* Centers the container horizontally */
 }
 
-.footer-logo img {
-    height: 50px;
-    width: auto;
+.newsletter-container {
+    margin-left: 5%;
+    margin-right: auto;
 }
 
-.footer-navigation {
+.newsletter-input-container {
     display: flex;
-    align-items: flex-end;
-    padding: 5px;
-}
-
-.footer-text-buttons a { /* fixes link anchors changing how element is displayed */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Make anchor behave like a block */
-}
-
-.footer-text-buttons button,
-.footer-image-buttons button {
-    background: none;
-    border: none;
-    font-size: 14px;
-    margin: 5px;
-    cursor: pointer;
-    padding: 1px 5px;
-    transition: background-color 0.3s;
-}
-
-.footer-text-buttons button:hover {
-    background-color: #e0e0e0;
-    border-radius: 4px;
-}
-
-.footer-image-buttons {
-    display: flex; /* Align buttons horizontally */
-    align-items: center; /* Vertically align content */
-    gap: 5px;
-}
-
-.footer-image-buttons button {
-    margin: 0px;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+
+    border: 1px solid #888;
+    border-radius: 4px;
+    
+    max-width: 400px;
+    width: 100%;
 }
 
-.footer-image-buttons button img {
-    opacity: .5;
-    transition: opacity 0.3s; /* Smooth transition */
-    width: 30px;
-    height: 30px;
+.newsletter-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
 }
 
-.footer-image-buttons button:hover img {
-    opacity: 0.8;
+.newsletter-input::placeholder {
+    color: #888;
+}
+
+.newsletter-button {
+    background-color: #f3ac28;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+    background-color: #d49621;
+}
+
+.footer-button {
+    color: #bbb;
+}
+
+.footer-button:hover{
+    /* Makes the text brighter and underlined on hover instead of default button hover effect. */
+    color: #ddd;
+    text-decoration: underline;
+
+    /* !important brute forces the on hover background to fuck off, but i found no other solution so it stays. */
+    background: unset !important;
 }
 
 /* ##### RESPONSIVE FOOTER ##### */
 /* Mobile layout changes. */
 
 @media (max-width: 835px) { 
-    .footer-text-buttons {
-        display: flex; /* Quick way to make button text stack saving space. */
 
-        width: 320px; /* Locks dimension so it doesn't have ugly contraction behaviour. */
-    }
-}
-
-@media (max-width: 690px) { 
-    .footer-text-buttons {
-        flex-direction: column; /* Make it stack the buttons, we have enough width for the full Game Dev Tycoon button text. */
-
-        width: auto; /* Unlock width or it remains messed up and too wide. */
-    }
-
-    .footer-image-buttons {
-        flex-direction: column;
-    }
 }
