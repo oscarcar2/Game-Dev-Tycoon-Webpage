@@ -40,6 +40,14 @@ body {
 }
 
 
+a {
+    color: #237223;
+}
+
+p {
+    line-height: 1.3;
+}
+
 h2 {
     text-align: center;
     font-style: italic;
@@ -560,4 +568,33 @@ h3 {
     border-radius: 10px; 
 
     /* outline: 2px dashed #FF00C8; */
+}
+
+
+
+/* ################## */
+/* ##### VALUES ##### */
+/* ################## */
+/* Heavy reuse from game description */
+
+.values-text-container {
+    display: flex;
+    
+    align-items: center;
+    gap: 25px;
+    
+    width: 80%;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ##### RESPONSIVE VALUES ##### */
+/* Mobile layout changes. */
+@media (max-width: 810px) { 
+    .values-text-container {
+        flex-direction: column;
+
+        /* outline: 2px dashed #FF00C8; */
+    }
 }
