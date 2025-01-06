@@ -616,11 +616,10 @@ More classes would be pointless extra code. */
 
 
 
-/* ####################### */
-/* ##### OTHER GAMES ##### */
-/* ####################### */
+/* ############### */
+/* ##### FAQ ##### */
+/* ############### */
 /* The functionality behind this was written entirely by ChatGPT. */
-
 .faq-container {
     display: flex;
     flex-direction: column;
@@ -628,10 +627,6 @@ More classes would be pointless extra code. */
     gap: 10px;
 
     width: 850px;
-}
-  
-.individual-faq-question {
-    
 }
   
 .faq-toggle {
@@ -680,4 +675,86 @@ More classes would be pointless extra code. */
 
         /* outline: 2px dashed #FF00C8; */
     }
+}
+
+
+
+/* ############################# */
+/* ##### TROOPS IN CONTACT ##### */
+/* ############################# */
+/* This is fake. It does not work and is purely for layout and design illustration. */
+/* The correct use of input, lable and textarea elements for this was written entirely by ChatGPT, 
+because it is purely illustrative and therefor temporary anyway. */
+.contact-form-container {
+    width: 100%;
+    max-width: 400px;
+
+    padding: 20px;
+
+    background-color: #FFE9D1;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 0 #000000;
+}
+  
+.contact-form h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    text-align: center;
+}
+  
+.contact-form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    color: #555;
+}
+  
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 10px;
+    margin-bottom: 20px;
+    
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+  
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d49621;
+    outline: none;
+}
+  
+.contact-form textarea {
+    height: 100px;
+    
+    resize: none;
+}
+  
+.contact-form button {
+    width: 100%;
+
+    padding: 10px;
+
+    background-color: #f3ac28;
+
+    border: none;
+    border-radius: 4px;
+    
+    color: #fff;
+    font-size: 16px;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.contact-form button:hover {
+    background-color: #d49621;
 }
