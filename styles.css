@@ -379,7 +379,7 @@ header {
 /* ################# */
 
 .h2-wrapper {
-    background: radial-gradient(farthest-side, #ffca67, rgba(255, 255, 255, 0));
+    background: radial-gradient(farthest-side, #ffca6760, rgba(255, 255, 255, 0));
 }
 
 
@@ -416,6 +416,10 @@ header {
 
 .individual-review-left-rating {
     display: flex;
+    
+    border-top: 5px solid #7c5102; 
+    border-bottom: 5px solid #7c5102;
+    border-radius: 5px;
 
     /* outline: 2px dashed #FF00C8; */
 }
@@ -467,12 +471,7 @@ header {
     font-weight: bold;
     font-style: italic;
 
-    color: #e2e2e2;
-    text-shadow: 
-    1px 1px 0px rgba(0, 0, 0, 0.8),  /* shadow to the bottom right */
-    -1px -1px 0px rgba(0, 0, 0, 0.8), /* shadow to the top left */
-    1px -1px 0px rgba(0, 0, 0, 0.8),  /* shadow to the top right */
-    -1px 1px 0px rgba(0, 0, 0, 0.8);  /* shadow to the bottom left */
+    color: #6d6d6d;
 }
 
 /* ##### RESPONSIVE REVIEWS ##### */
