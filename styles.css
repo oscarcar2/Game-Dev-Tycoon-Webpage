@@ -130,7 +130,7 @@ h3 {
 /* ##### HEADER ##### */
 /* ################## */
 
-.header {
+header {
     position: relative; /* Needed to enable z-index manipulation. */
     z-index: 1; /* Hide the slight overflow behind the header to do a bit of lazy cropping. */
 
@@ -734,7 +734,7 @@ because it is purely illustrative and therefor temporary anyway. */
   
 .contact-form textarea {
     height: 100px;
-    
+
     resize: none;
 }
   
@@ -757,4 +757,111 @@ because it is purely illustrative and therefor temporary anyway. */
   
 .contact-form button:hover {
     background-color: #d49621;
+}
+
+
+
+/* ################## */
+/* ##### FOOTER ##### */
+/* ################## */
+
+footer {
+    position: relative; /* Needed to enable z-index manipulation. */
+    z-index: 1; /* Hide the slight overflow behind the footer to do a bit of lazy cropping. */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #F2BA52;
+    border-top: 1px solid #D98D62;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1050px; /* Maximum width for the layout */
+    width: 100%; /* Makes the container flexible within the max-width */
+    margin: 0 auto; /* Centers the container horizontally */
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-navigation {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+}
+
+.footer-text-buttons a { /* fixes link anchors changing how element is displayed */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make anchor behave like a block */
+}
+
+.footer-text-buttons button,
+.footer-image-buttons button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    margin: 5px;
+    cursor: pointer;
+    padding: 1px 5px;
+    transition: background-color 0.3s;
+}
+
+.footer-text-buttons button:hover {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+.footer-image-buttons {
+    display: flex; /* Align buttons horizontally */
+    align-items: center; /* Vertically align content */
+    gap: 5px;
+}
+
+.footer-image-buttons button {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.footer-image-buttons button img {
+    opacity: .5;
+    transition: opacity 0.3s; /* Smooth transition */
+    width: 30px;
+    height: 30px;
+}
+
+.footer-image-buttons button:hover img {
+    opacity: 0.8;
+}
+
+/* ##### RESPONSIVE FOOTER ##### */
+/* Mobile layout changes. */
+
+@media (max-width: 835px) { 
+    .footer-text-buttons {
+        display: flex; /* Quick way to make button text stack saving space. */
+
+        width: 320px; /* Locks dimension so it doesn't have ugly contraction behaviour. */
+    }
+}
+
+@media (max-width: 690px) { 
+    .footer-text-buttons {
+        flex-direction: column; /* Make it stack the buttons, we have enough width for the full Game Dev Tycoon button text. */
+
+        width: auto; /* Unlock width or it remains messed up and too wide. */
+    }
+
+    .footer-image-buttons {
+        flex-direction: column;
+    }
 }
