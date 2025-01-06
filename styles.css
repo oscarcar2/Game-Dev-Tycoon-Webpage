@@ -1,13 +1,16 @@
-/* 
-These are my debugging highlights. 
+/* GENERAL COMMENTS
+Missing: 
+* Netflix button for platform list (I just completely forgot, and adding a 5th element to a 4 element lineup is a lot of extra work for restructuring and responsiveness.)
+* Reddit button anywhere on the page (This one is arguable. The reddit is very dead comppared to discord and has no neat spot to fit into either. Leaving it missing may actually be preferrable, albeit unintentional.)*/
+
+/* These are my debugging highlights. 
 I apply them to currently worked on elements to make sure i have a correct mental model of 
 how given elements are dimensioned.
 Mainly useful when invisible elements accidentally have unintuitive size relations or an errant
 gap or similar is causing stuff to get pushed around unintentionally.
 
 outline: 2px dashed #FF00C8;
-background-color: rgb(112, 16, 91); 
-*/
+background-color: rgb(112, 16, 91); */
 
 * {
     margin: 0;
@@ -251,7 +254,7 @@ header {
 }
 
 .banner-container img{
-    width: 60%;
+    width: 80%;
     height: auto;
 
     /* Supposedly webkit version of code is for compatibility with older browsers. Unverified. */
@@ -838,11 +841,4 @@ footer {
 
     /* !important brute forces the on hover background to fuck off, but i found no other solution so it stays. */
     background: unset !important;
-}
-
-/* ##### RESPONSIVE FOOTER ##### */
-/* Mobile layout changes. */
-
-@media (max-width: 835px) { 
-
 }
