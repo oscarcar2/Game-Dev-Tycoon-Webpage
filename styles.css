@@ -613,3 +613,71 @@ h3 {
 
 /* It's all directly in HTML or derived from reviews or socials because this contains only a single element. 
 More classes would be pointless extra code. */
+
+
+
+/* ####################### */
+/* ##### OTHER GAMES ##### */
+/* ####################### */
+/* The functionality behind this was written entirely by ChatGPT. */
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 850px;
+}
+  
+.individual-faq-question {
+    
+}
+  
+.faq-toggle {
+    display: none; /* Hide the checkbox */
+}
+  
+.faq-question {
+    display: block;
+
+    padding: 10px;
+    
+    border: 2px solid #000000;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 0 #000000;
+    background-color: #FFE9D1;
+
+    text-align: left;
+
+    /* Replaces the normal arrow with a hand while hovering. */
+    cursor: pointer;
+}
+  
+.faq-answer {
+    display: none;
+
+    padding: 10px;
+    margin-top: 5px;
+
+    border-radius: 10px;
+    background-color: #F2D0A7;
+
+    font-size: 14px;
+}
+
+/* Show the answer when the checkbox is checked */
+.faq-toggle:checked + .faq-question + .faq-answer {
+    display: block;
+}
+
+/* ##### RESPONSIVE FAQ ##### */
+/* Mobile layout changes. */
+@media (max-width: 960px) { 
+    /* Shitty solution but expedient. */
+    .faq-container {
+        width: 90%
+
+        /* outline: 2px dashed #FF00C8; */
+    }
+}
