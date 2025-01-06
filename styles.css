@@ -185,7 +185,7 @@ h3 {
 .image-buttons {
     display: flex; /* Align buttons horizontally */
     align-items: center; /* Vertically align content */
-    gap: 0px; /* Optional: Add spacing between the buttons */
+    gap: 5px;
 }
 
 .image-buttons button {
@@ -211,7 +211,7 @@ h3 {
 /* ##### RESPONSIVE HEADER ##### */
 /* Mobile layout changes. */
 
-@media (max-width: 800px) { 
+@media (max-width: 835px) { 
     .text-buttons {
         display: flex; /* Quick way to make button text stack saving space. */
 
@@ -219,11 +219,15 @@ h3 {
     }
 }
 
-@media (max-width: 640px) { 
+@media (max-width: 690px) { 
     .text-buttons {
         flex-direction: column; /* Make it stack the buttons, we have enough width for the full Game Dev Tycoon button text. */
 
         width: auto; /* Unlock width or it remains fucked and too wide. */
+    }
+
+    .image-buttons {
+        flex-direction: column;
     }
 
     /* Left as illustration, this is how i quickly determine if behaviour is activating at the intended width by simply dragging window size. */
